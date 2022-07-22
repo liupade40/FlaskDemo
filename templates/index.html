@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<link type="text/css" href="{{ url_for('static',filename='bootstrap-3.4.1-dist/css/bootstrap-theme.css') }}" rel="stylesheet">
+
+<link type="text/css" href="{{ url_for('static',filename='bootstrap-3.4.1-dist/css/bootstrap.css') }}" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+<div class="container">
+    <table class="table">
+   <tr>
+       <th>id</th>
+       <th>name</th>
+       <th>author</th>
+       <th></th>
+   </tr>
+    {% for item in data %}
+    <tr>
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.author}}</td>
+        <td><a href="{{url_for('detail',id=item.id)}}">查看</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+</div>
+</body>
+</html>
